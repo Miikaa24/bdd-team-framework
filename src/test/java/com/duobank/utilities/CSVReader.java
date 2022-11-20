@@ -1,4 +1,4 @@
-package com.something.utilities;
+package com.duobank.utilities;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
