@@ -2,7 +2,7 @@ Feature: Basic features
 
 
 
-  Scenario: Navigate to homepage
+    Scenario: Navigate to homepage
     Given I navigate to the homepage
     Then The homepage url should be correct
     And The title should be Login - Loan Application

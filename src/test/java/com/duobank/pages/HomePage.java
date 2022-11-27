@@ -19,4 +19,13 @@ public class HomePage {
 
     @FindBy (name = "register")
     public WebElement signUpButton;
+
+    @FindBy (id = "exampleInputEmail1")
+    public WebElement enterEmail;
+
+    @FindBy (id="exampleInputPassword1")
+    public WebElement enterPass;
+
+    @FindBy (name="login")
+    public WebElement loginButton;
 }

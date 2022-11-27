@@ -6,6 +6,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @CucumberOptions(
+        tags ="@test",
         features = "src/test/resources", // path to the feature files
         glue = "com/duobank/stepDefinitions" //path to the step definition classes
 
