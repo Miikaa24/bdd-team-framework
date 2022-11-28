@@ -1,20 +1,26 @@
 Feature: Login feature
 
-  @login
-  Scenario: Login with valid credentials
+  Background:
     Given I navigate to the homepage
+
+  @smoke @positive
+  Scenario: Login with valid credentials
     When I enter valid login credentials
     Then I should be able to login and land on Welcome Page
 
-
+  @smoke
     Scenario: Login with invalid credentials
-      Given I navigate to the homepage
       When I enter invalid login credentials
       Then I should not be able to login
 
 
-  @test
+  @smoke @noCredentials
   Scenario: Login with no credentials
-    Given I navigate to the homepage
     When I enter no login credentials
     Then I should not be able to login
+
+    @smoke
+  Scenario: Login with valid credentials parametrized
+    Given I navigate to the homepage
+    When I enter login credentials as "revifon371@pamaweb.com" and "Automation1234!"
+    Then I should be able to login and land on Welcome Page

@@ -45,4 +45,11 @@ public class LoginStepDef {
 
     }
 
+    @When("I enter login credentials as {string} and {string}")
+    public void i_enter_login_credentials_as_and(String email, String pass) {
+        HomePage homePage = new HomePage();
+        homePage.enterEmail.sendKeys(email);
+        homePage.enterPass.sendKeys(pass);
+        homePage.loginButton.click();
+    }
 }
