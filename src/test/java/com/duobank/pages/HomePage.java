@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
+public class HomePage<WebElements> {
     public HomePage(){
         PageFactory.initElements(Driver.getDriver(), this);
 
@@ -28,4 +28,7 @@ public class HomePage {
 
     @FindBy (name="login")
     public WebElement loginButton;
+
+
+
 }

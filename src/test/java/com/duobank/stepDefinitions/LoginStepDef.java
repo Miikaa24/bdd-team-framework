@@ -16,8 +16,8 @@ public class LoginStepDef {
         homePage.enterPass.sendKeys(ConfigReader.getProperty("pass"));
         homePage.loginButton.click();
 
-
     }
+
     @Then("I should be able to login and land on Welcome Page")
     public void i_should_be_able_to_login_and_land_on_welcome_page() {
         Assert.assertEquals("http://qa-duobank.us-east-2.elasticbeanstalk.com/dashboard.php", Driver.getDriver().getCurrentUrl());

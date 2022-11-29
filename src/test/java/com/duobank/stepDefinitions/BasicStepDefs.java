@@ -1,6 +1,7 @@
 package com.duobank.stepDefinitions;
 
 import com.duobank.pages.HomePage;
+import com.duobank.pages.MortgageApplicationPage;
 import com.duobank.utilities.ConfigReader;
 import com.duobank.utilities.Driver;
 import io.cucumber.java.en.And;
@@ -10,6 +11,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class BasicStepDefs{
+
 
     @Given("I navigate to the homepage")
     public void i_navigate_to_the_homepage(){
@@ -40,6 +42,12 @@ public class BasicStepDefs{
         Assert.assertTrue(new HomePage().signUpButton.isDisplayed());
         Driver.quitDriver();
 
+    }
+
+    @When("I click on Mortgage Application button")
+    public void i_click_on_mortgage_application_button() {
+        MortgageApplicationPage mortgageApplicationPage = new MortgageApplicationPage<>();
+        mortgageApplicationPage.mortgageApplicationButton.click();
     }
 }
 
