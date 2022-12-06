@@ -8,7 +8,7 @@ Feature: Preapproval page feature
     Then I should be able to direct to the Preapproval Details page
 
 
-    @
+
     Scenario: Direct to the Personal Information page
 
       When I enter required information for Preapproval Details page and click on Next button
@@ -17,21 +17,21 @@ Feature: Preapproval page feature
 
 
 
-#  Scenario: Check required fields with valid credentials
-#
-#    When I enter required information for Preapproval Details page and click on Next button
-#    And I enter valid credentials for application form on Personal Information page
-#    Then I check Privacy Policy box and click on next
-#    Then I should land on Expenses page and see Current Monthly Housing Expenses text
-#
-#
-#
-#  Scenario: Check required fields with invalid credentials
-#
-#    When I enter required information for Preapproval Details page and click on Next button
-#    And I enter invalid credentials for application form on Personal Information page
-#    Then I click on next
-#    Then I should no be able to land on Expenses page and see Current Monthly Housing Expenses text
+  Scenario: Check required fields with valid credentials
+
+    When I enter required information for Preapproval Details page and click on Next button
+    And I enter valid credentials for application form on Personal Information page
+    Then I check Privacy Policy box and click on next
+    Then I should land on Expenses page and see Current Monthly Housing Expenses text
+
+
+
+  Scenario: Check required fields with invalid credentials
+
+    When I enter required information for Preapproval Details page and click on Next button
+    And I enter invalid credentials for application form on Personal Information page
+    Then I check Privacy Policy box and click on next
+    Then I should no be able to land on Expenses page and see Current Monthly Housing Expenses text
 
 
 

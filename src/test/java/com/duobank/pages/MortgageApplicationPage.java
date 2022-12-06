@@ -49,7 +49,7 @@ public class MortgageApplicationPage<WebElements> {
     @FindBy(id = "b_dob")
     public WebElement dobInPersonalInformation;
 
-    @FindBy(id = "select2-b_marital-container")
+    @FindBy(id = "//select[@name='b_marital']")
     public WebElement maritalStatusInPersonalInformation;
 
     @FindBy(xpath = "//label[@for='privacypolicy']")

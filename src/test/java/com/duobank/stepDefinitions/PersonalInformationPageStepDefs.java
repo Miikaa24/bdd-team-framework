@@ -54,38 +54,33 @@ public class PersonalInformationPageStepDefs {
     }
 
 
+    // --------------==============--------------==============--------------==============--------------==============
 
 
     @When("I enter valid credentials for application form on Personal Information page")
     public void i_enter_valid_credentials_for_application_form_on_personal_information_page() throws InterruptedException {
         mortgageApplicationPage = new MortgageApplicationPage<>();
-      //  mortgageApplicationPage.maritalStatusInPersonalInformation.sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER);
         mortgageApplicationPage.firstNameInPersonalInformation.sendKeys("John");
         mortgageApplicationPage.lastNameInPersonalInformation.sendKeys("Smith");
         mortgageApplicationPage.emailInPersonalInformation.sendKeys("jsmith@gmail.com");
         mortgageApplicationPage.dobInPersonalInformation.sendKeys("10101985");
         mortgageApplicationPage.ssnInPersonalInformation.sendKeys("123456789");
-      //  mortgageApplicationPage.maritalStatusInPersonalInformation.sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER);
-        Select maritalStatus = new Select(Driver.getDriver().findElement(By.xpath("//span[@aria-labelledby='select2-b_marital-container']")));
+        Select maritalStatus = new Select(Driver.getDriver().findElement(By.xpath("//select[@name='b_marital']")));
         maritalStatus.selectByVisibleText("Married");
-
-//        SeleniumUtils.jsClick(mortgageApplicationPage.maritalStatusInPersonalInformation);
-//        Driver.getDriver().findElement(By.xpath("//li[.='Married']")).click();
-        //  Driver.getDriver().findElement(By.xpath("//input[@class='select2-search__field']")).sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER);
-          mortgageApplicationPage.cellPhoneInPersonalInformation.sendKeys("4154151515");
+        mortgageApplicationPage.cellPhoneInPersonalInformation.sendKeys("4154151515");
 
     }
 
     @Then("I check Privacy Policy box and click on next")
     public void i_check_privacy_policy_box_and_click_on_next() {
-        SeleniumUtils.jsClick(mortgageApplicationPage.privacyPolicyCheckBox);
-        SeleniumUtils.jsClick(mortgageApplicationPage.nextButton);
+        mortgageApplicationPage.privacyPolicyCheckBox.click();
+        mortgageApplicationPage.nextButton.click();
 
     }
 
     @Then("I should land on Expenses page and see Current Monthly Housing Expenses text")
     public void i_should_land_on_expenses_page_and_see_current_monthly_housing_expenses_text() {
-        Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//h6[.='Current Monthly Housing Expenses']")).isDisplayed());
+        Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//label[.='Monthly Rental Payment '")).isDisplayed());
 
     }
 
@@ -93,25 +88,16 @@ public class PersonalInformationPageStepDefs {
     @When("I enter invalid credentials for application form on Personal Information page")
     public void i_enter_invalid_credentials_for_application_form_on_personal_information_page() {
         mortgageApplicationPage = new MortgageApplicationPage<>();
-        //  mortgageApplicationPage.maritalStatusInPersonalInformation.sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER);
         mortgageApplicationPage.firstNameInPersonalInformation.sendKeys("cl@ss123");
         mortgageApplicationPage.lastNameInPersonalInformation.sendKeys("cl@ss123");
         mortgageApplicationPage.emailInPersonalInformation.sendKeys("cl@ss123");
         mortgageApplicationPage.dobInPersonalInformation.sendKeys("cl@ss123");
         mortgageApplicationPage.ssnInPersonalInformation.sendKeys("cl@ss123");
-        //  mortgageApplicationPage.maritalStatusInPersonalInformation.sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER);
-        Select maritalStatus = new Select(Driver.getDriver().findElement(By.xpath("//span[@aria-labelledby='select2-b_marital-container']")));
-        maritalStatus.getFirstSelectedOption();
-
-//        SeleniumUtils.jsClick(mortgageApplicationPage.maritalStatusInPersonalInformation);
-//        Driver.getDriver().findElement(By.xpath("//li[.='Married']")).click();
-        //  Driver.getDriver().findElement(By.xpath("//input[@class='select2-search__field']")).sendKeys(Keys.ARROW_DOWN, Keys.ARROW_DOWN, Keys.ENTER);
+        Select maritalStatus = new Select(Driver.getDriver().findElement(By.xpath("//select[@name='b_marital']")));
+        maritalStatus.selectByVisibleText("Married");
         mortgageApplicationPage.cellPhoneInPersonalInformation.sendKeys("cl@ss123");
     }
-    @Then("I click on next")
-    public void i_click_on_next() {
-        mortgageApplicationPage.nextButton.click();
-    }
+
     @Then("I should no be able to land on Expenses page and see Current Monthly Housing Expenses text")
     public void i_should_no_be_able_to_land_on_expenses_page_and_see_current_monthly_housing_expenses_text() {
       Assert.assertFalse(Driver.getDriver().findElement(By.xpath("//h6[.='Current Monthly Housing Expenses']")).isDisplayed());
