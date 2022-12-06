@@ -59,10 +59,11 @@ public class PersonalInformationPageStepDefs {
 
     @When("I enter valid credentials for application form on Personal Information page")
     public void i_enter_valid_credentials_for_application_form_on_personal_information_page() throws InterruptedException {
+
         mortgageApplicationPage = new MortgageApplicationPage<>();
         mortgageApplicationPage.firstNameInPersonalInformation.sendKeys("John");
         mortgageApplicationPage.lastNameInPersonalInformation.sendKeys("Smith");
-        mortgageApplicationPage.emailInPersonalInformation.sendKeys("jsmith@gmail.com");
+        mortgageApplicationPage.emailInPersonalInformation.sendKeys("jsmith@gmail");
         mortgageApplicationPage.dobInPersonalInformation.sendKeys("10101985");
         mortgageApplicationPage.ssnInPersonalInformation.sendKeys("123456789");
         Select maritalStatus = new Select(Driver.getDriver().findElement(By.xpath("//select[@name='b_marital']")));
@@ -78,13 +79,23 @@ public class PersonalInformationPageStepDefs {
 
     }
 
+
     @Then("I should land on Expenses as a Current page")
     public void I_should_land_on_Expenses_as_a_Current_page() {
         WebElement currentPage = Driver.getDriver().findElement(By.xpath("//li[@class='current']"));
         String currentPageText = currentPage.getText();
         Assert.assertTrue(currentPageText.equalsIgnoreCase("Expenses"));
 
+
     }
+
+    @Then("I click on next")
+    public void i_click_on_next() {
+        mortgageApplicationPage.nextButton.click();
+    }
+    @Then("I should no be able to land on Expenses page and see Current Monthly Housing Expenses text")
+
+
 
 
     // -------------------------  ========================  -------------------------  ========================
@@ -105,6 +116,7 @@ public class PersonalInformationPageStepDefs {
         mortgageApplicationPage.cellPhoneInPersonalInformation.sendKeys("cl@ss123");
     }
 
+
     @Then("I should not be able to land on Expenses as a Current page")
     public void i_should_no_be_able_to_land_on_expenses_page_and_see_current_monthly_housing_expenses_text() {
         WebElement currentPage = Driver.getDriver().findElement(By.xpath("//li[@class='current']"));
@@ -116,6 +128,7 @@ public class PersonalInformationPageStepDefs {
 
 
     // -------------------------  ========================  -------------------------  ========================
+
 
 
 

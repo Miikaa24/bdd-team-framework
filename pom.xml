@@ -107,13 +107,12 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>Duotify</projectName>
-                            <!-- output directory for the generated report -->
+                            <projectName>Duo-bank</projectName>
+
                             <outputDirectory>${project.build.directory}/pretty-report</outputDirectory>
-                            <!-- folder where it looks for json file needed to generate this report -->
+
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
-                                <!-- name of the json file, could also be a pattern -->
                                 <param>**/*.json</param>
                             </jsonFiles>
                         </configuration>

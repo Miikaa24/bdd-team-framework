@@ -10,13 +10,13 @@ import org.openqa.selenium.TakesScreenshot;
 import java.time.Duration;
 
 public class Hooks {
-    //most types of hooks are explained in Akmal's bdd framework under Hook's class
+
     @Before
     public void setupScenario(){
 
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         Driver.getDriver().manage().window().maximize();
-        //you can add delete cookies as well
+
 
     }
     @After

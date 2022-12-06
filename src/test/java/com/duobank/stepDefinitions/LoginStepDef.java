@@ -27,7 +27,7 @@ public class LoginStepDef {
     @When("I enter invalid login credentials")
     public void i_enter_invalid_login_credentials() {
         HomePage homePage = new HomePage();
-        homePage.enterEmail.sendKeys("myemail");
+        homePage.enterEmail.sendKeys("email");
         homePage.enterPass.sendKeys("pass");
         homePage.loginButton.click();
     }

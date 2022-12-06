@@ -8,9 +8,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class PreApprovalDetailsPage {
+public class PreApprovalDetailsPage <WebElements> {
 
-    public PreApprovalDetailsPage() {PageFactory.initElements(Driver.getDriver(), this);}
+    public PreApprovalDetailsPage()
+    {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 
     @FindBy(xpath ="//li[@class='nav-item has-sub sidebar-group-active open']//li[@class='active']//a")
     public WebElement mortgageApplication;
@@ -33,8 +36,10 @@ public class PreApprovalDetailsPage {
 
     @FindBy(xpath = "//h6[contains(text(),'Personal Information')]")
     public WebElement personalInfoPage;
+
     @FindBy(id = "realtor1")
     public WebElement checkboxYes;
+
     @FindBy(id = "realtorinfo")
     public WebElement realtorinfo;
 

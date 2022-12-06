@@ -1,6 +1,7 @@
 package com.duobank.stepDefinitions;
 
 import com.duobank.pages.HomePage;
+import com.duobank.pages.MortgageApplicationPage;
 import com.duobank.pages.PreApprovalDetailsPage;
 import com.duobank.utilities.ConfigReader;
 import com.duobank.utilities.Driver;
@@ -22,19 +23,10 @@ import static org.junit.Assert.assertEquals;
 
 public class preApprovalDetailsStepDefs {
 
+    PreApprovalDetailsPage preApprovalDetailsPage;
+    MortgageApplicationPage mortgageApplicationPage;
 
-    HomePage homePage = new HomePage();
-    PreApprovalDetailsPage preApprovalDetailsPage = new PreApprovalDetailsPage();
 
-    @When("I login")
-    public void i_enter_valid_login_credentials() throws InterruptedException {
-
-        homePage.enterEmail.sendKeys(ConfigReader.getProperty("email"));
-        homePage.enterPass.sendKeys(ConfigReader.getProperty("pass"));
-        homePage.loginButton.click();
-        Thread.sleep(2000);
-
-    }
     @When("I click on Mortgage Application")
     public void i_click_on_mortgage_application() {
 
@@ -76,12 +68,13 @@ public class preApprovalDetailsStepDefs {
     @Then("Click on next button")
     public void click_on_next_button() {
 
-        preApprovalDetailsPage.nextButton.click();
+//        preApprovalDetailsPage.nextButton.click();
+        mortgageApplicationPage.nextButton.click();
     }
     @Then("I should be on personal information page")
-    public void i_shoul_be_on_personal_information_page() {
+    public void i_should_be_on_personal_information_page() {
 
-        //preApprovalDetailsPage.personalInfoPage.isDisplayed();
+        preApprovalDetailsPage.personalInfoPage.isDisplayed();
 
     }
 

@@ -14,6 +14,7 @@ import org.junit.runner.RunWith;
         "html:target/cucumber-built-in-report/report.html",  // generates a built-in cucumber html report
         "json:target/jsonReport.json",
         "rerun:target/failedScenarioList.txt"
+
 }
 
 
