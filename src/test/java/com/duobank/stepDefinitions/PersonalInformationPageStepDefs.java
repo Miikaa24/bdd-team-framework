@@ -80,9 +80,14 @@ public class PersonalInformationPageStepDefs {
 
     @Then("I should land on Expenses page and see Current Monthly Housing Expenses text")
     public void i_should_land_on_expenses_page_and_see_current_monthly_housing_expenses_text() {
-        Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//label[.='Monthly Rental Payment '")).isDisplayed());
+        WebElement expensesConfirmText = Driver.getDriver().findElement(By.xpath("//*[contains(text(),'Housing Expenses')]"));
+        Assert.assertTrue(expensesConfirmText.isDisplayed());
 
     }
+
+
+    // ----------------------------------
+
 
 
     @When("I enter invalid credentials for application form on Personal Information page")
@@ -98,17 +103,15 @@ public class PersonalInformationPageStepDefs {
         mortgageApplicationPage.cellPhoneInPersonalInformation.sendKeys("cl@ss123");
     }
 
-    @Then("I should no be able to land on Expenses page and see Current Monthly Housing Expenses text")
+    @Then("I should not be able to land on Expenses page")
     public void i_should_no_be_able_to_land_on_expenses_page_and_see_current_monthly_housing_expenses_text() {
-      Assert.assertFalse(Driver.getDriver().findElement(By.xpath("//h6[.='Current Monthly Housing Expenses']")).isDisplayed());
+        WebElement expensesConfirmText = Driver.getDriver().findElement(By.xpath("//*[contains(text(),'Housing Expenses')]"));
+        Assert.assertFalse(expensesConfirmText.isDisplayed());
     }
 
 
 
-
-
-
-
+//--------------------------------------
 
 
 
@@ -117,9 +120,9 @@ public class PersonalInformationPageStepDefs {
         mortgageApplicationPage.lastNameInPersonalInformation.sendKeys("Smith");
         mortgageApplicationPage.nextButton.click();
     }
-    @Then("I should be  able to see an error message of This field is required.")
+    @Then("I should be able to see an error message of This field is required.")
     public void i_should_be_able_to_see_this_field_is_required_error_message() {
-        boolean errorMessageIsDisplayed = mortgageApplicationPage.firstNameErrorMessage.isDisplayed();
+        boolean errorMessageIsDisplayed = mortgageApplicationPage.errorMessage.isDisplayed();
         Assert.assertTrue(errorMessageIsDisplayed);
     }
 
