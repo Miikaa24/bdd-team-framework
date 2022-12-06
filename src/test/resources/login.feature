@@ -19,8 +19,8 @@ Feature: Login feature
     When I enter no login credentials
     Then I should not be able to login
 
-    @smoke
+    @fail
   Scenario: Login with valid credentials parametrized
     Given I navigate to the homepage
-    When I enter login credentials as "revifon371@pamaweb.com" and "Automation1234!"
+    When I enter login credentials as "revifon371@pamawebdf.com" and "Automation1234!"
     Then I should be able to login and land on Welcome Page

@@ -59,10 +59,10 @@ public class PersonalInformationPageStepDefs {
 
     @When("I enter valid credentials for application form on Personal Information page")
     public void i_enter_valid_credentials_for_application_form_on_personal_information_page() throws InterruptedException {
-        mortgageApplicationPage = new MortgageApplicationPage<>();
+
         mortgageApplicationPage.firstNameInPersonalInformation.sendKeys("John");
         mortgageApplicationPage.lastNameInPersonalInformation.sendKeys("Smith");
-        mortgageApplicationPage.emailInPersonalInformation.sendKeys("jsmith@gmail.com");
+        mortgageApplicationPage.emailInPersonalInformation.sendKeys("jsmith@gmail");
         mortgageApplicationPage.dobInPersonalInformation.sendKeys("10101985");
         mortgageApplicationPage.ssnInPersonalInformation.sendKeys("123456789");
         Select maritalStatus = new Select(Driver.getDriver().findElement(By.xpath("//select[@name='b_marital']")));
@@ -85,8 +85,12 @@ public class PersonalInformationPageStepDefs {
 
     }
 
+    @Then("I click on next")
+    public void i_click_on_next() {
+        mortgageApplicationPage.nextButton.click();
+    }
+    @Then("I should no be able to land on Expenses page and see Current Monthly Housing Expenses text")
 
-    // ----------------------------------
 
 
 
@@ -108,12 +112,6 @@ public class PersonalInformationPageStepDefs {
         WebElement expensesConfirmText = Driver.getDriver().findElement(By.xpath("//*[contains(text(),'Housing Expenses')]"));
         Assert.assertFalse(expensesConfirmText.isDisplayed());
     }
-
-
-
-//--------------------------------------
-
-
 
     @Then("I click on next button on Personal Information page without entering any credentials")
     public void i_click_on_next_button_without_entering_any_credentials() {

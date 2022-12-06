@@ -20,6 +20,7 @@ Feature: Mortgage Application
     And Click on next button
     Then I should be on personal information page
 
+
   @smoke
   Scenario: Yes checkbox with realtor name
     When Check Yes Checkbox under Are You Working With realtor
