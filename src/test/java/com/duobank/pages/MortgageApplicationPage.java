@@ -9,6 +9,7 @@ import java.util.List;
 
 public class MortgageApplicationPage<WebElements> {
     public MortgageApplicationPage(){
+
         PageFactory.initElements(Driver.getDriver(), this);
 
     }

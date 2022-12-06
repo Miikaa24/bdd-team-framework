@@ -1,5 +1,6 @@
 package com.duobank.stepDefinitions;
 
+import com.duobank.pages.EmploymentPage;
 import com.duobank.pages.HomePage;
 import com.duobank.pages.MortgageApplicationPage;
 import com.duobank.utilities.ConfigReader;
@@ -49,5 +50,9 @@ public class BasicStepDefs{
         MortgageApplicationPage mortgageApplicationPage = new MortgageApplicationPage<>();
         mortgageApplicationPage.mortgageApplicationButton.click();
     }
+
+
+
+
 }
 
