@@ -60,6 +60,7 @@ public class PersonalInformationPageStepDefs {
     @When("I enter valid credentials for application form on Personal Information page")
     public void i_enter_valid_credentials_for_application_form_on_personal_information_page() throws InterruptedException {
 
+        mortgageApplicationPage = new MortgageApplicationPage<>();
         mortgageApplicationPage.firstNameInPersonalInformation.sendKeys("John");
         mortgageApplicationPage.lastNameInPersonalInformation.sendKeys("Smith");
         mortgageApplicationPage.emailInPersonalInformation.sendKeys("jsmith@gmail");
@@ -78,10 +79,13 @@ public class PersonalInformationPageStepDefs {
 
     }
 
-    @Then("I should land on Expenses page and see Current Monthly Housing Expenses text")
-    public void i_should_land_on_expenses_page_and_see_current_monthly_housing_expenses_text() {
-        WebElement expensesConfirmText = Driver.getDriver().findElement(By.xpath("//*[contains(text(),'Housing Expenses')]"));
-        Assert.assertTrue(expensesConfirmText.isDisplayed());
+
+    @Then("I should land on Expenses as a Current page")
+    public void I_should_land_on_Expenses_as_a_Current_page() {
+        WebElement currentPage = Driver.getDriver().findElement(By.xpath("//li[@class='current']"));
+        String currentPageText = currentPage.getText();
+        Assert.assertTrue(currentPageText.equalsIgnoreCase("Expenses"));
+
 
     }
 
@@ -90,6 +94,11 @@ public class PersonalInformationPageStepDefs {
         mortgageApplicationPage.nextButton.click();
     }
     @Then("I should no be able to land on Expenses page and see Current Monthly Housing Expenses text")
+
+
+
+
+    // -------------------------  ========================  -------------------------  ========================
 
 
 
@@ -107,11 +116,22 @@ public class PersonalInformationPageStepDefs {
         mortgageApplicationPage.cellPhoneInPersonalInformation.sendKeys("cl@ss123");
     }
 
-    @Then("I should not be able to land on Expenses page")
+
+    @Then("I should not be able to land on Expenses as a Current page")
     public void i_should_no_be_able_to_land_on_expenses_page_and_see_current_monthly_housing_expenses_text() {
-        WebElement expensesConfirmText = Driver.getDriver().findElement(By.xpath("//*[contains(text(),'Housing Expenses')]"));
-        Assert.assertFalse(expensesConfirmText.isDisplayed());
+        WebElement currentPage = Driver.getDriver().findElement(By.xpath("//li[@class='current']"));
+        String currentPageText = currentPage.getText();
+        Assert.assertFalse(currentPageText.equalsIgnoreCase("Expenses"));
     }
+
+
+
+
+    // -------------------------  ========================  -------------------------  ========================
+
+
+
+
 
     @Then("I click on next button on Personal Information page without entering any credentials")
     public void i_click_on_next_button_without_entering_any_credentials() {
@@ -123,5 +143,11 @@ public class PersonalInformationPageStepDefs {
         boolean errorMessageIsDisplayed = mortgageApplicationPage.errorMessage.isDisplayed();
         Assert.assertTrue(errorMessageIsDisplayed);
     }
+
+
+
+    // -------------------------  ========================  -------------------------  ========================
+
+
 
 }
