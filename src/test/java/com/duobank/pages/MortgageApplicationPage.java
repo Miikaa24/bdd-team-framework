@@ -55,8 +55,8 @@ public class MortgageApplicationPage<WebElements> {
     @FindBy(xpath = "//label[@for='privacypolicy']")
     public WebElement privacyPolicyCheckBox;
 
-    @FindBy(id = "b_firstName-error")
-    public WebElement firstNameErrorMessage;
+    @FindBy(xpath = "//*[contains(text(),'This field is required.')]")
+    public WebElement errorMessage;
 
 
 
