@@ -7,8 +7,6 @@ import org.junit.runner.RunWith;
 
 @CucumberOptions(
 
-
-        tags = "@test",
         features = "src/test/resources", // path to the feature files
         glue = "com/duobank/stepDefinitions", //path to the step definition classes
         plugin = {
@@ -16,6 +14,7 @@ import org.junit.runner.RunWith;
         "html:target/cucumber-built-in-report/report.html",  // generates a built-in cucumber html report
         "json:target/jsonReport.json",
         "rerun:target/failedScenarioList.txt"
+
 }
 
 
