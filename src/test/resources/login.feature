@@ -3,18 +3,18 @@ Feature: Login feature
   Background:
     Given I navigate to the homepage
 
-  @smoke @positive
+#  @smoke @positive
   Scenario: Login with valid credentials
     When I enter valid login credentials
     Then I should be able to login and land on Welcome Page
 
-  @smoke
+#  @smoke
     Scenario: Login with invalid credentials
       When I enter invalid login credentials
       Then I should not be able to login
 
 
-  @smoke @noCredentials
+#  @smoke @noCredentials
   Scenario: Login with no credentials
     When I enter no login credentials
     Then I should not be able to login

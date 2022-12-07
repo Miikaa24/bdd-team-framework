@@ -1,5 +1,5 @@
 #!/bin/sh
-mvn verify -D cucumber.filter.tags="@tests" -D browser=chrome
-mvn verify -D cucumber.filter.tags="@tests" -D browser=firefox
-mvn verify -D cucumber.filter.tags="@tests" -D browser=safari
+mvn verify -D cucumber.filter.tags="@employment" -D browser=chromeHeadless
+mvn verify -D cucumber.filter.tags="@employment" -D browser=firefoxHeadless
+mvn verify -D cucumber.filter.tags="@employment" -D browser=safari
 

@@ -1,3 +1,4 @@
+@employment
 Feature: Employment info
   //Background:
 
@@ -11,7 +12,7 @@ Feature: Employment info
     And I enter valid credentials for application form on Personal Information page
     Then I check Privacy Policy box and click on next
 
-  @test
+
     Scenario: Directing to Employment Page
     When I enter rent amount
     And click next
@@ -28,5 +29,5 @@ Feature: Employment info
       | 120000 | 35000    | 20000 | 12000      | 10       |
 
     And Click the next button
-#    Then I should be able to direct to the next page and see PreApproval Inquiry
+    Then I should be able to direct to the next page and see PreApproval Inquiry
 

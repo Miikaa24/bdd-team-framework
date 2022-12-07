@@ -8,6 +8,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
 
@@ -36,9 +37,9 @@ public class Driver {
                     WebDriverManager.firefoxdriver().setup();
                     drivers.set(new FirefoxDriver());
                     break;
-                case "edge":
-                    WebDriverManager.edgedriver().setup();
-                    drivers.set(new EdgeDriver());
+                case "safari":
+                    WebDriverManager.safaridriver().setup();
+                    drivers.set(new SafariDriver());
                     break;
                 case "chromeHeadless":
                     WebDriverManager.chromedriver().setup();
@@ -51,12 +52,6 @@ public class Driver {
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
                     firefoxOptions.setHeadless(true);
                     drivers.set(new FirefoxDriver(firefoxOptions));
-                    break;
-                case "edgeHeadless":
-                    WebDriverManager.edgedriver().setup();
-                    EdgeOptions edgeOptions = new EdgeOptions();
-                    edgeOptions.setHeadless(true);
-                    drivers.set(new EdgeDriver(edgeOptions));
                     break;
                 default:
                     throw new RuntimeException("Unsupported Browser");

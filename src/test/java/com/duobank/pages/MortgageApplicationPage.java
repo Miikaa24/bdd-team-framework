@@ -14,6 +14,9 @@ public class MortgageApplicationPage<WebElements> {
 
     }
 
+
+    @FindBy (xpath = "//span[@class='user-name']")
+    public WebElement fullNameOnDash;
     @FindBy(xpath = "//a[.='Mortgage Application']")
     public WebElement mortgageApplicationButton;
 
