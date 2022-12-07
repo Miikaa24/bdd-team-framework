@@ -14,9 +14,9 @@ public class EconsentPageStepDefs {
 
     @When("I Consent")
     public void i_enter_personal_information(){
-        econsentPage.eConsentFirstName.sendKeys(ConfigReader.getProperty("FirstName"));
-        econsentPage.eConsentLastName.sendKeys(ConfigReader.getProperty("LastName"));
-        econsentPage.eConsentEmail.sendKeys(ConfigReader.getProperty("email"));
+        econsentPage.eConsentFirstName.sendKeys("FirstName");
+        econsentPage.eConsentLastName.sendKeys("LastName");
+        econsentPage.eConsentEmail.sendKeys("email");
     }
 
     @Then("I Click on Agree and Next")
