@@ -1,3 +1,4 @@
+@Econsent
 Feature: Mortgage Application
 
   Background:
@@ -11,15 +12,17 @@ Feature: Mortgage Application
     Then I check Privacy Policy box and click on next
     When I enter rent amount
     And click next
-    Then I should be able to direct to the Employment page
     When I enter following info for required fields
+      | Name     | Position | City      |
+      | John Doe | Director | Arlington |
     Then I choose state
     Then I enter following info for monthly income
-    Then Click the next button
-    Then I should be able to direct to the next page and see PreApproval Inquiry
+      | Income | Overtime | Bonus | Commission | Interest |
+      | 120000 | 35000    | 20000 | 12000      | 10       |
+    And Click the next button
     When Check Yes Checkbox under PreApproval Inquiry
     Then I Click on Next
-    Then I should See the eConsent Title
+    And I should See the eConsent Title
 
   @smoke
   Scenario: I Consent

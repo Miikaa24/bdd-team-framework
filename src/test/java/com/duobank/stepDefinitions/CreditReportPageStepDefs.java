@@ -2,8 +2,6 @@ package com.duobank.stepDefinitions;
 
 import com.duobank.pages.CreditReportPage;
 import com.duobank.pages.EconsentPage;
-import com.duobank.pages.HomePage;
-import com.duobank.utilities.ConfigReader;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
