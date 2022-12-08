@@ -34,6 +34,9 @@ public class HomePage {
     @FindBy(name = "register")
     public WebElement signUpButton;
 
+    @FindBy (xpath = "//h4[contains(text(),' ')]")
+    public WebElement HomePageText;
+
     @FindBy(id = "exampleInputEmail1")
     public WebElement enterEmail;
 
