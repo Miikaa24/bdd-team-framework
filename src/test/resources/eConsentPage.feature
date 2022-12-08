@@ -26,32 +26,40 @@ Feature: Mortgage Application
 
   @smoke
   Scenario: I Consent
+    When I fill out required fields
     Then I Click on Agree and Next
-    And I should See the eConsent Title
+    And I should See the eConsent Summary Title
+
 
   @smoke
   Scenario: I don't Consent
+    When I fill out required fields
     Then I Click on Disagree and Next
-    And I should See eConsent Title
+    Then I click on next button on econsent
+    And I should See the eConsent Summary Title
 
   @smoke
   Scenario: I Consent but don't Enter my First Name
     Then I Click on Agree and Next
+    Then I click on next button on econsent
     And I should See the Field Required Error
 
   @smoke
   Scenario: I don't Consent but don't Enter my First Name
     Then I Click on Disagree and Next
+    Then I click on next button on econsent
     And I should See First Name Field Required Error
 
   @smoke
   Scenario: I Consent but don't  Enter my Email Address
     Then I Click on Agree and Next
+    Then I click on next button on econsent
     And I should See Email Field Required Error
 
   @smoke
   Scenario: I don't Consent but don't Enter my Email Address
     Then I Click on Disagree and Next
+    Then I click on next button on econsent
     And I should See the Email Field Required Error
 
 

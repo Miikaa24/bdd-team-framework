@@ -1,3 +1,4 @@
+@creditreport
 Feature: Mortgage Application
 
   Background:
@@ -23,19 +24,19 @@ Feature: Mortgage Application
 
   @smoke
   Scenario: Check Yes Checkbox under PreApproval Inquiry
-      Then I click Next Button
+      Then I click Next Button on creditReport
       And I should See the eConsent Title
 
   @smoke
   Scenario: Check No Checkbox under PreApproval Inquiry
-      Then Click on Next
-      And I should See eConsent Title
+      Then I click Next Button on creditReport
+      And I should See the eConsent Title
 
   Scenario: Check Both Yes and No Checkbox under PreApproval Inquiry
       Then Check Yes Checkbox under PreApproval Inquiry
       Then Check No Checkbox under PreApproval Inquiry
-      Then Click on Next
-      And I should See eConsent
+      Then I click Next Button on creditReport
+      And I should See the eConsent Title
 
 
 
