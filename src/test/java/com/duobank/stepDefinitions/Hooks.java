@@ -1,5 +1,6 @@
 package com.duobank.stepDefinitions;
 
+import com.duobank.utilities.DButils;
 import com.duobank.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -16,7 +17,7 @@ public class Hooks {
 
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         Driver.getDriver().manage().window().maximize();
-
+        DButils.createConnection();
 
     }
     @After
@@ -28,5 +29,6 @@ public class Hooks {
         }
 
         Driver.quitDriver();
+        DButils.close();
     }
 }
