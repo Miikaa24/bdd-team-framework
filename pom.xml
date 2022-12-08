@@ -89,8 +89,8 @@
                 <configuration>
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
-                        <include>**/*CucumberRunner.java</include>
-                        <include>**/*FailedScenarioRunner.java</include>
+<!--                        <include>**/*CucumberRunner.java</include>-->
+<!--                        <include>**/*FailedScenarioRunner.java</include>-->
                                                 <include>**/*ParallelRunner.java</include>
                         <!--suppress UnresolvedMavenProperty -->
                         <include>${className}</include>
