@@ -50,7 +50,6 @@ public class DButils {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-​
     }
     public static int executeUpdate(String query) throws SQLException {
         try {
