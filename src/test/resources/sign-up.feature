@@ -8,8 +8,8 @@ Feature: Sign Up feature
   @fake
   Scenario: Sign up with random valid info
     When I enter valid random info to sign up
-    Then I should be able to login and land on Welcome Page
-    And  I should be able to see the same full name that I signed up with
+    And click on the sign up button
+    Then I should be able to see Welcome Back, Automation Testers! text
 
 #  Scenario: Sign up with invalid info
 #    When I enter invalid random info to sign up
@@ -21,13 +21,14 @@ Feature: Sign Up feature
 #    Then I should not be able to login
 
 
-  @datatable
+  @dataTable
   Scenario: Sign up with datatable info
     When I enter the following info to sign up
       | Firstname | Lastname | Email             | Password   |
-      | Stephen   | Curry    | StepCur@gmail.com | Stepcur123 |
-    Then I should be able to login and land on Welcome Page
-    And  I should be able to see the same full name that I signed up with
+      | Stephen   | Curry    | StepCur@yahoo.com | Stepcur123 |
+    And click on the sign up button
+    Then I should be able to see Welcome Back, Automation Testers! text
+
 
 
   @outline
@@ -35,8 +36,8 @@ Feature: Sign Up feature
     When I enter the following info to sign up
       | Firstname | Lastname | Email   | Password |
       | <FIRST>   | <LAST>   | <EMAIL> | <PASS>   |
-    Then I should be able to login and land on Welcome Page
-    And I should be able to see the same full name that I signed up with
+    And click on the sign up button
+    Then I should be able to see Welcome Back, Automation Testers! text
     Examples:
       | FIRST    | LAST    | EMAIL               | PASS         |
       | Harry    | Potter  | HarryP@gmail.com    | Harry2022    |
