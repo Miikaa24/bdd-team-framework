@@ -6,13 +6,13 @@ Feature: Mortgage Application
     And I click on Mortgage Application
 
 
-  @smoke
+#  @smoke
   Scenario: Click next without entering any information
     Then I click Next Button
     And I should see THIS FIELD IS REQUIRED. text
 
 
-  @smoke
+#  @smoke
   Scenario: No checkbox
     When Check No Checkbox under Are You Working With realtor
     Then Enter purchase price
@@ -21,7 +21,7 @@ Feature: Mortgage Application
     Then I should be on personal information page
 
 
-  @smoke
+#  @smoke
   Scenario: Yes checkbox with realtor name
     When Check Yes Checkbox under Are You Working With realtor
     Then I enter realtor name

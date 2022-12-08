@@ -1,3 +1,4 @@
+@Econsent
 Feature: Mortgage Application
 
   Background:
@@ -11,44 +12,54 @@ Feature: Mortgage Application
     Then I check Privacy Policy box and click on next
     When I enter rent amount
     And click next
-    Then I should be able to direct to the Employment page
     When I enter following info for required fields
+      | Name     | Position | City      |
+      | John Doe | Director | Arlington |
     Then I choose state
     Then I enter following info for monthly income
-    Then Click the next button
-    Then I should be able to direct to the next page and see PreApproval Inquiry
+      | Income | Overtime | Bonus | Commission | Interest |
+      | 120000 | 35000    | 20000 | 12000      | 10       |
+    And Click the next button
     When Check Yes Checkbox under PreApproval Inquiry
     Then I Click on Next
-    Then I should See the eConsent Title
-
-  @smoke
-  Scenario: I Consent
-    Then I Click on Agree and Next
     And I should See the eConsent Title
 
   @smoke
+  Scenario: I Consent
+    When I fill out required fields
+    Then I Click on Agree and Next
+    And I should See the eConsent Summary Title
+
+
+  @smoke
   Scenario: I don't Consent
+    When I fill out required fields
     Then I Click on Disagree and Next
-    And I should See eConsent Title
+    Then I click on next button on econsent
+    And I should See the eConsent Summary Title
 
   @smoke
   Scenario: I Consent but don't Enter my First Name
     Then I Click on Agree and Next
+    Then I click on next button on econsent
     And I should See the Field Required Error
 
   @smoke
   Scenario: I don't Consent but don't Enter my First Name
     Then I Click on Disagree and Next
+    Then I click on next button on econsent
     And I should See First Name Field Required Error
 
   @smoke
   Scenario: I Consent but don't  Enter my Email Address
     Then I Click on Agree and Next
+    Then I click on next button on econsent
     And I should See Email Field Required Error
 
   @smoke
   Scenario: I don't Consent but don't Enter my Email Address
     Then I Click on Disagree and Next
+    Then I click on next button on econsent
     And I should See the Email Field Required Error
 
 

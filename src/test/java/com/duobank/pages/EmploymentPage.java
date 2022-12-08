@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class EmploymentPage <WebElements>{
+public class EmploymentPage{
 
     public EmploymentPage() {
         PageFactory.initElements(Driver.getDriver(), this);

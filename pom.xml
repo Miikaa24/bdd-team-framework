@@ -67,6 +67,11 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.31</version>
+        </dependency>
 
 
 
@@ -86,11 +91,11 @@
                     <includes>
                         <include>**/*CucumberRunner.java</include>
                         <include>**/*FailedScenarioRunner.java</include>
-                        <!--                        <include>**/*FailedScenariosRunner.java</include>-->
-                        <!--                    when running multiple classes, the class name can be passed thru cmd using the placeholder  -->
-                        <!--                        <include>${className}</include>-->
+                                                <include>**/*ParallelRunner.java</include>
+                        <!--suppress UnresolvedMavenProperty -->
+                        <include>${className}</include>
                     </includes>
-                    <!--                       These 2 options have to added when running tests in parallel -->
+
                                         <parallel>methods</parallel>
                                         <useUnlimitedThreads>true</useUnlimitedThreads>
                 </configuration>

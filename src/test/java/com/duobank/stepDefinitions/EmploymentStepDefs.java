@@ -66,11 +66,14 @@ public class EmploymentStepDefs {
      employmentPage.nextButton.click();
     }
 
-    @Then("I should be able to direct to the next page and see PreApproval Inquiry")
-    public void i_should_be_able_to_direct_to_the_next_page_and_see_pre_approval_inquiry() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+//    @Then("I should be able to direct to the next page and see PreApproval Inquiry")
+//    public void i_should_be_able_to_direct_to_the_next_page_and_see_pre_approval_inquiry() {
+//        WebElement currentPage = Driver.getDriver().findElement(By.xpath("//li[@class='current']"));
+//        String currentPageText = currentPage.getText();
+//        Assert.assertTrue(currentPageText.equalsIgnoreCase("credit report"));
+//    }
+
+
 
 
 

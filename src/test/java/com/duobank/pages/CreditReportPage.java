@@ -26,4 +26,8 @@ public class CreditReportPage {
     public void clickCheckboxNo() {
         SeleniumUtils.jsClick(preApprovalInquiryButtonNo);
     }
+
+    public void clickNext(){
+        SeleniumUtils.jsClick(preApprovalInquiryNextButton);
+    }
 }
