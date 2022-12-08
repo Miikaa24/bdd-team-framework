@@ -12,7 +12,7 @@ Feature: Preapproval page feature
 
     Scenario: Direct to the Personal Information page
 
-#    Positive test case, It should land on next page after valid credentials, It does. So TEST PASSED
+#    Positive test case, It should land on next page after  valid credentials, It does. So TEST PASSED
   Scenario: Direct to the Personal Information page
 
     When I enter required information for Preapproval Details page and click on Next button
