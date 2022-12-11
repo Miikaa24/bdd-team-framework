@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
 
-        tags = "@db",
+        tags = "@Sprint5",
 
 
         features = "src/test/resources", // path to the feature files
